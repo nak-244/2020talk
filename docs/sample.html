@@ -4,8 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ショートバージョン</title>
-  <meta name="description" content="Free Bootstrap 4 Pingendo Aquamarine template for unique events.">
+  <title>サンプル</title>
   <link rel="stylesheet" href="aquamarine.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&amp;display=swap" rel="stylesheet">
@@ -30,7 +29,7 @@
     </div>
   </nav>
 
-  <div class="py-5">
+  <div id="app" class="py-5">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -44,20 +43,74 @@
             </div>
           </div>
 
+          <span class="float-right">
+            <button class="btn btn-outline-primary my-2 show" @click="showModal" class="collapse" id="collapseExample">エリアを選択してください</button>
+          </span>
+
           <div class="kaiwa">
             <figure class="kaiwa-img-right"><img src="assets/img/03.png"></figure>
-            <div class="kaiwa-text-left">
+            <div class="kaiwa-text-left" v-for="user in users" v-bind:key="user.id">
               <p class="kaiwa-text">
-                ショートバージョンショートバージョンショートバージョンショートバージョンショートバージョンショートバージョンショートバージョンショートバージョンショートバージョンショートバージョンショートバージョンショートバージョン
+                {{ user.id }}
               </p>
             </div>
           </div>
+
+          <!-- モーダルウィンドウ用 -->
+          <modal name="user-modal" :height="400">
+            <div class="card bg-white">
+              <div class="card-body">
+                <div class="card-title">
+                  <h2>エリア選択</h2>
+                </div>
+                <div class="card-text">
+                  <div class="form-group">
+                    <label for="id">エリア</label>
+                    <input type="text" class="form-control" id="id" placeholder="IDを入力してください" v-model="form.id">
+                  </div>
+                  <button class="btn btn-primary" @click="registerUser" data-toggle="collapse" data-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">登録</button>
+                </div>
+              </div>
+            </div>
+          </modal>
 
         </div>
       </div>
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-js-modal@1.3.31/dist/index.min.js"></script>
+  <script>
+    Vue.use(window["vue-js-modal"].default);
+    const vue = new Vue({
+      el: "#app",
+      data: {
+        title: 'ユーザ一覧',
+        form: {
+          id: '',
+        },
+        users: [],
+        editIndex: -1,
+      },
+      methods: {
+        showModal() {
+          this.createFlag = true;
+          this.resetForm();
+          this.$modal.show('user-modal');
+        },
+        registerUser() {
+          const user = Object.assign({}, this.form);
+          this.users.push(user);
+          this.$modal.hide('user-modal');
+          this.resetForm();
+        },
+        resetForm() {
+          this.form.id = '';
+        },
+      },
+    })
+  </script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
