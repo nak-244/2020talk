@@ -47,9 +47,9 @@
             <button class="btn btn-outline-primary my-2 show" @click="showModal" class="collapse" id="collapseExample">エリアを選択してください</button>
           </span>
 
-          <div class="kaiwa">
+          <div class="kaiwa" v-for="user in users" v-bind:key="user.id">
             <figure class="kaiwa-img-right"><img src="assets/img/03.png"></figure>
-            <div class="kaiwa-text-left" v-for="user in users" v-bind:key="user.id">
+            <div class="kaiwa-text-left">
               <p class="kaiwa-text">
                 {{ user.id }}
               </p>
@@ -57,7 +57,7 @@
           </div>
 
           <!-- モーダルウィンドウ用 -->
-          <modal name="user-modal" :height="400">
+          <modal name="user-modal">
             <div class="card bg-white">
               <div class="card-body">
                 <div class="card-title">
