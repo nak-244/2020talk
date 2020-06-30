@@ -44,7 +44,7 @@
           </div>
 
           <span class="float-right">
-            <button class="btn btn-outline-primary my-2 show" @click="showModal" class="collapse" id="collapseExample">エリアを選択してください</button>
+            <button class="btn btn-outline-primary my-2 show" @click="showModal" class="collapse" id="collapse1">エリアを選択してください</button>
           </span>
 
           <div class="kaiwa" v-for="user in users" v-bind:key="user.id">
@@ -57,18 +57,39 @@
           </div>
 
           <!-- モーダルウィンドウ用 -->
-          <modal name="user-modal">
-            <div class="card bg-white">
-              <div class="card-body">
-                <div class="card-title">
-                  <h2>エリア選択</h2>
-                </div>
-                <div class="card-text">
-                  <div class="form-group">
-                    <label for="id">エリア</label>
-                    <input type="text" class="form-control" id="id" placeholder="IDを入力してください" v-model="form.id">
+          <modal name="user-modal" :adaptive="true">
+            <div class="container">
+              <div class="card bg-white">
+                <div class="card-body">
+                  <div class="card-title">
+                    <h2>エリア選択</h2>
                   </div>
-                  <button class="btn btn-primary" @click="registerUser" data-toggle="collapse" data-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">登録</button>
+                  <div class="card-text">
+                    <div class="form-group">
+                      <label for="id">エリア</label>
+                      <input type="text" class="form-control" id="id" placeholder="IDを入力してください" v-model="form.id">
+
+<div class="row">
+  <div class="col-sm-12 col-md-4">
+    <button class="btn btn-outline-primary btn-block" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+    北海道・東北地方
+  </button>
+  </div>
+  <div class="col-sm-12 col-md-4">
+    <button class="btn btn-outline-primary btn-block" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+    関東地方
+  </button>
+  </div>
+  <div class="col-sm-12 col-md-4">
+    <button class="btn btn-outline-primary btn-block" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+    北陸・甲信越地方
+  </button>
+  </div>
+</div>
+
+                    </div>
+                    <button class="btn btn-primary" @click="registerUser" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">登録</button>
+                  </div>
                 </div>
               </div>
             </div>
