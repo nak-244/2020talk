@@ -48,7 +48,7 @@
           </span>
 
           <span v-for="user in users" v-bind:key="user.id">
-            
+
             <div class="kaiwa">
               <figure class="kaiwa-img-right"><img src="assets/img/03.png"></figure>
               <div class="kaiwa-text-left">
@@ -67,6 +67,8 @@
               </div>
             </div>
 
+            <a class="btn btn-primary full-width" href="" target="_blank">検索</a>
+
           </span>
 
           <!-- モーダルウィンドウ用 -->
@@ -84,7 +86,7 @@
                         <div class="col-12">
                           <div class="card">
                             <div class="card-body">
-                              <select class="custom-select" 　v-model="form.id">
+                              <select class="custom-select" v-model="form.id">
                                 <option value="" selected>都道府県を選んでください</option>
                                 <option value="北海道">北海道</option>
                                 <option value="青森県">青森県</option>
@@ -151,6 +153,8 @@
     </div>
   </div>
 
+
+
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue-js-modal@1.3.31/dist/index.min.js"></script>
   <script>
@@ -167,21 +171,17 @@
       methods: {
         showModal() {
           this.createFlag = true;
-          this.resetForm();
           this.$modal.show('user-modal');
         },
         registerUser() {
           const user = Object.assign({}, this.form);
           this.users.push(user);
           this.$modal.hide('user-modal');
-          this.resetForm();
-        },
-        resetForm() {
-          this.form.id = '';
         },
       },
     })
   </script>
+
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
