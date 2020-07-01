@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ショートバージョン</title>
+  <link rel="stylesheet" href="aquamarine.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&amp;display=swap" rel="stylesheet">
+  <script src="js/animate-in.js"></script>
+  <link rel="stylesheet" href="assets/css/common.css">
+  <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-white sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="assets/img/pc1.png" />
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarDarkSupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse text-center justify-content-end" id="navbarDarkSupportedContent">
+        <ul class="navbar-nav"></ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+
+          <div class="kaiwa efectleft">
+            <figure class="kaiwa-img-left"><img src="assets/img/02.png"></figure>
+            <div class="kaiwa-text-right">
+              <p class="kaiwa-text">
+                どのエリアで働きたいですか？
+              </p>
+            </div>
+          </div>
+
+          <span class="float-right collapse show efectright" id="answer1">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal1">働きたいエリアを選んでください</button>
+          </span>
+
+          <!-- Modal -->
+          <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modal1Label" aria-hidden="true" data-backdrop="static">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modal1Label">エリア選択</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <!-- 都道府県 -->
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="card">
+                          <div class="card-body">
+                            <select id="srh_ken_param" class="custom-select srh_ken_param">
+                              <option value="" selected>都道府県を選んでください</option>
+                              <option value="1">北海道</option>
+                              <option value="2">青森県</option>
+                              <option value="3">岩手県</option>
+                              <option value="4">宮城県</option>
+                              <option value="5">秋田県</option>
+                              <option value="6">山形県</option>
+                              <option value="7">福島県</option>
+                              <option value="8">茨城県</option>
+                              <option value="9">栃木県</option>
+                              <option value="10">群馬県</option>
+                              <option value="11">埼玉県</option>
+                              <option value="12">千葉県</option>
+                              <option value="13">東京都</option>
+                              <option value="14">神奈川県</option>
+                              <option value="15">新潟県</option>
+                              <option value="16">富山県</option>
+                              <option value="17">石川県</option>
+                              <option value="18">福井県</option>
+                              <option value="19">山梨県</option>
+                              <option value="20">長野県</option>
+                              <option value="21">岐阜県</option>
+                              <option value="22">静岡県</option>
+                              <option value="23">愛知県</option>
+                              <option value="24">三重県</option>
+                              <option value="25">滋賀県</option>
+                              <option value="26">京都府</option>
+                              <option value="27">大阪府</option>
+                              <option value="28">兵庫県</option>
+                              <option value="29">奈良県</option>
+                              <option value="30">和歌山県</option>
+                              <option value="31">鳥取県</option>
+                              <option value="32">島根県</option>
+                              <option value="33">岡山県</option>
+                              <option value="34">広島県</option>
+                              <option value="35">山口県</option>
+                              <option value="36">徳島県</option>
+                              <option value="37">香川県</option>
+                              <option value="38">愛媛県</option>
+                              <option value="39">高知県</option>
+                              <option value="40">福岡県</option>
+                              <option value="41">佐賀県</option>
+                              <option value="42">長崎県</option>
+                              <option value="43">熊本県</option>
+                              <option value="44">大分県</option>
+                              <option value="45">宮崎県</option>
+                              <option value="46">鹿児島県</option>
+                              <option value="47">沖縄県</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button id="kenbtn" type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="collapse" href="#answer1">選択する</button>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="kaiwa collapse" id="answer1">
+            <figure class="kaiwa-img-right"><img src="assets/img/03.png"></figure>
+            <div class="kaiwa-text-left">
+              <p id="ken" class="kaiwa-text">
+              </p>
+            </div>
+          </div>
+
+          <div class="kaiwa collapse" id="answer1">
+            <figure class="kaiwa-img-left"><img src="assets/img/02.png"></figure>
+            <div class="kaiwa-text-right">
+              <p class="kaiwa-text">
+                あなたのこだわりを教えて下さい。
+              </p>
+            </div>
+          </div>
+
+          <span class="float-right collapse" id="answer1">
+            <div class="float-right collapse show" id="answer2">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal2">こだわり条件を選ぶ</button>
+            </div>
+          </span>
+
+          <!-- Modal -->
+          <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modal2Label" aria-hidden="true" data-backdrop="static">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modal2Label">こだわり条件選択</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <!-- こだわり -->
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="card">
+                          <div class="card-body">
+                            <div class="custom-control custom-switch">
+                              <div class="row">
+                                <div class="col-6">
+                                  <label><input type="checkbox" name="os" class="custom-control-input srh_room_type_param" id="日払いOK" value="12"><label class="custom-control-label" for="日払いOK">日払いOK</label></label>
+                                </div>
+                                <div class="col-6">
+                                  <label><input type="checkbox" name="os" class="custom-control-input srh_room_type_param" id="未経験歓迎" value="14">
+                                  <label class="custom-control-label" for="未経験歓迎">未経験歓迎</label></label>
+                                </div>
+                                <div class="col-6">
+                                  <label><input type="checkbox" name="os" class="custom-control-input srh_room_type_param" id="服装自由" value="23"><label class="custom-control-label" for="服装自由">服装自由</label></label>
+                                </div>
+                                <div class="col-6">
+                                  <label><input type="checkbox" name="os" class="custom-control-input srh_room_type_param" id="交通費／手当あり" value="22"><label class="custom-control-label" for="交通費／手当あり">交通費／手当あり</label></label>
+                                </div>
+                                <div class="col-6">
+                                  <label><input type="checkbox" name="os" class="custom-control-input srh_room_type_param" id="オープニングスタッフ" value="21"><label class="custom-control-label" for="オープニングスタッフ">オープニングスタッフ</label></label>
+                                </div>
+                                <div class="col-6">
+                                  <label><input type="checkbox" name="os" class="custom-control-input srh_room_type_param" id="大量募集" value="20"><label class="custom-control-label" for="大量募集">大量募集</label></label>
+                                </div>
+                                <div class="col-6">
+                                  <label><input type="checkbox" name="os" class="custom-control-input srh_room_type_param" id="学生歓迎" value="19"><label class="custom-control-label" for="学生歓迎">学生歓迎</label></label>
+                                </div>
+                                <div class="col-6">
+                                  <label><input type="checkbox" name="os" class="custom-control-input srh_room_type_param" id="経験者のみ" value="18"><label class="custom-control-label" for="経験者のみ">経験者のみ</label></label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button id="kodawaribtn" type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="collapse" href="#answer2">選択する</button>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="kaiwa collapse" id="answer2">
+            <figure class="kaiwa-img-right"><img src="assets/img/03.png"></figure>
+            <div class="kaiwa-text-left">
+              <p id="kodawari" class="kaiwa-text">
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="collapse" id="answer2">
+    <div class="container-fluid">
+      <div class="row py-3">
+        <div class="col-lg-3 col-md-3 col-sm-12 mx-auto">
+          <a class="btn btn-primary full-width" href="https://sigotora.jp/index.cfm?fuseaction=job.joblist" id="search" target="_blank">カスタマイズ求人一覧</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="js/smooth-scroll.js"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+  <script>
+    $(function() {
+      // button要素をクリックしたら発動
+      $('button#kenbtn').click(function() {
+        // セレクトボックスで選択したvalue値を変数に格納
+        var ken = $('#srh_ken_param option:selected').text();
+        // p要素にvauleを出力
+        $('p#ken').text(ken);
+      });
+    });
+  </script>
+  <script>
+    $(function() {
+      $('button#kodawaribtn').click(function() {
+        var kodawari = $('[name="os"]:checked').map(function() {
+          return $(this).parent('label').text();
+        }).get();
+        $('p#kodawari').text(kodawari);
+      });
+    });
+  </script>
+  <script type="text/javascript">
+    $(function() {
+      var href = "https://sigotora.jp/index.cfm";
+      $('.srh_ken_param,.srh_room_type_param').on('change', function() {
+        var srh_ken_param = $('.srh_ken_param').val();
+        var srh_room_type_param = $('.srh_room_type_param:checked').map(function() {
+          return $(this).val();
+        }).get();
+        $('#search').prop('href', href + "?fuseaction=job.joblist&srh_ken_param=" + srh_ken_param + "&srh_room_type_param=" + srh_room_type_param);
+      });
+    });
+  </script>
+  <script>
+    var efectleft = {
+      delay: 300, //アニメーションの発生タイミング
+      distance: '200px', //要素の移動距離
+      origin: 'top' //要素が移動してくる方向
+    };
+    var efectright = {
+      delay: 600, //アニメーションの発生タイミング
+      distance: '200px', //要素の移動距離
+      origin: 'top' //要素が移動してくる方向
+    };
+    ScrollReveal().reveal('.efectleft', efectleft);
+    ScrollReveal().reveal('.efectright', efectright);
+  </script>
+
+</body>
+
+</html>
