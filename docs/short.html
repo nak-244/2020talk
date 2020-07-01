@@ -167,17 +167,35 @@
                       <div class="col-12">
                         <div class="card">
                           <div class="card-body">
-                            <select style="height: 400px" id="srh_room_type_param" class="custom-select srh_room_type_param" multiple>
-                              <option value="" disabled>こだわり条件を選んでください</option>
-                              <option value="12">日払いOK</option>
-                              <option value="14">未経験歓迎</option>
-                              <option value="23">服装自由</option>
-                              <option value="22">交通費／手当あり</option>
-                              <option value="21">オープニングスタッフ</option>
-                              <option value="20">大量募集</option>
-                              <option value="19">学生歓迎</option>
-                              <option value="18">経験者のみ</option>
-                            </select>
+                            <div class="custom-control custom-switch">
+                              <div class="row">
+                                <div class="col-6">
+                                  <label><input type="checkbox" name="os" class="custom-control-input srh_room_type_param" id="日払いOK" value="12"><label class="custom-control-label" for="日払いOK">日払いOK</label></label>
+                                </div>
+                                <div class="col-6">
+                                  <label><input type="checkbox" name="os" class="custom-control-input srh_room_type_param" id="未経験歓迎" value="14">
+                                  <label class="custom-control-label" for="未経験歓迎">未経験歓迎</label></label>
+                                </div>
+                                <div class="col-6">
+                                  <label><input type="checkbox" name="os" class="custom-control-input srh_room_type_param" id="服装自由" value="23"><label class="custom-control-label" for="服装自由">服装自由</label></label>
+                                </div>
+                                <div class="col-6">
+                                  <label><input type="checkbox" name="os" class="custom-control-input srh_room_type_param" id="交通費／手当あり" value="22"><label class="custom-control-label" for="交通費／手当あり">交通費／手当あり</label></label>
+                                </div>
+                                <div class="col-6">
+                                  <label><input type="checkbox" name="os" class="custom-control-input srh_room_type_param" id="オープニングスタッフ" value="21"><label class="custom-control-label" for="オープニングスタッフ">オープニングスタッフ</label></label>
+                                </div>
+                                <div class="col-6">
+                                  <label><input type="checkbox" name="os" class="custom-control-input srh_room_type_param" id="大量募集" value="20"><label class="custom-control-label" for="大量募集">大量募集</label></label>
+                                </div>
+                                <div class="col-6">
+                                  <label><input type="checkbox" name="os" class="custom-control-input srh_room_type_param" id="学生歓迎" value="19"><label class="custom-control-label" for="学生歓迎">学生歓迎</label></label>
+                                </div>
+                                <div class="col-6">
+                                  <label><input type="checkbox" name="os" class="custom-control-input srh_room_type_param" id="経験者のみ" value="18"><label class="custom-control-label" for="経験者のみ">経験者のみ</label></label>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -235,24 +253,10 @@
   </script>
   <script>
     $(function() {
-      $('.srh_room_type_param').select2({
-        "width": "100%",
-        closeOnSelect: false
-      });
-    });
-  </script>
-  <script>
-    $(function() {
-      // button要素をクリックしたら発動
       $('button#kodawaribtn').click(function() {
-        // ①配列の変数を宣言
-        var kodawari = [];
-        // ②選択したoption要素をeachで1つずつループ処理
-        $('#srh_room_type_param option:selected').each(function() {
-          // ③セレクトボックスで選択したテキストを1つずつ配列に格納
-          kodawari.push($(this).text());
-        });
-        // p要素にテキストを出力
+        var kodawari = $('[name="os"]:checked').map(function() {
+          return $(this).parent('label').text();
+        }).get();
         $('p#kodawari').text(kodawari);
       });
     });
@@ -260,9 +264,9 @@
   <script type="text/javascript">
     $(function() {
       var href = "https://sigotora.jp/index.cfm";
-      $('.srh_ken_param,#srh_room_type_param').on('change', function() {
+      $('.srh_ken_param,.srh_room_type_param').on('change', function() {
         var srh_ken_param = $('.srh_ken_param').val();
-        var srh_room_type_param = $('#srh_room_type_param').map(function() {
+        var srh_room_type_param = $('.srh_room_type_param:checked').map(function() {
           return $(this).val();
         }).get();
         $('#search').prop('href', href + "?fuseaction=job.joblist&srh_ken_param=" + srh_ken_param + "&srh_room_type_param=" + srh_room_type_param);
