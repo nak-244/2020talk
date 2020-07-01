@@ -5,11 +5,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ショートバージョン</title>
-  <meta name="description" content="Free Bootstrap 4 Pingendo Aquamarine template for unique events.">
   <link rel="stylesheet" href="aquamarine.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&amp;display=swap" rel="stylesheet">
-  <script src="js/1navbar-ontop.js"></script>
   <script src="js/animate-in.js"></script>
   <link rel="stylesheet" href="assets/css/common.css">
 </head>
@@ -25,7 +23,6 @@
         <span class="navbar-toggler-icon"></span> </button>
       <div class="collapse navbar-collapse text-center justify-content-end" id="navbarDarkSupportedContent">
         <ul class="navbar-nav"></ul>
-        <form class="form-inline my-2 my-lg-0"> <input class="form-control mr-sm-2" type="text" placeholder="Search"> <button class="btn my-2 my-sm-0 btn-primary" type="submit">Search</button> </form>
       </div>
     </div>
   </nav>
@@ -44,11 +41,158 @@
             </div>
           </div>
 
-          <div class="kaiwa">
+          <span class="float-right collapse show" id="answer1">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal1">働きたいエリアを選んでください</button>
+          </span>
+
+          <!-- Modal -->
+          <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modal1Label" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modal1Label">エリア選択</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <!-- 都道府県 -->
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="card">
+                          <div class="card-body">
+                            <select id="srh_ken_param" class="custom-select srh_ken_param">
+                              <option value="" selected>都道府県を選んでください</option>
+                              <option value="1">北海道</option>
+                              <option value="2">青森県</option>
+                              <option value="3">岩手県</option>
+                              <option value="4">宮城県</option>
+                              <option value="5">秋田県</option>
+                              <option value="6">山形県</option>
+                              <option value="7">福島県</option>
+                              <option value="8">茨城県</option>
+                              <option value="9">栃木県</option>
+                              <option value="10">群馬県</option>
+                              <option value="11">埼玉県</option>
+                              <option value="12">千葉県</option>
+                              <option value="13">東京都</option>
+                              <option value="14">神奈川県</option>
+                              <option value="15">新潟県</option>
+                              <option value="16">富山県</option>
+                              <option value="17">石川県</option>
+                              <option value="18">福井県</option>
+                              <option value="19">山梨県</option>
+                              <option value="20">長野県</option>
+                              <option value="21">岐阜県</option>
+                              <option value="22">静岡県</option>
+                              <option value="23">愛知県</option>
+                              <option value="24">三重県</option>
+                              <option value="25">滋賀県</option>
+                              <option value="26">京都府</option>
+                              <option value="27">大阪府</option>
+                              <option value="28">兵庫県</option>
+                              <option value="29">奈良県</option>
+                              <option value="30">和歌山県</option>
+                              <option value="31">鳥取県</option>
+                              <option value="32">島根県</option>
+                              <option value="33">岡山県</option>
+                              <option value="34">広島県</option>
+                              <option value="35">山口県</option>
+                              <option value="36">徳島県</option>
+                              <option value="37">香川県</option>
+                              <option value="38">愛媛県</option>
+                              <option value="39">高知県</option>
+                              <option value="40">福岡県</option>
+                              <option value="41">佐賀県</option>
+                              <option value="42">長崎県</option>
+                              <option value="43">熊本県</option>
+                              <option value="44">大分県</option>
+                              <option value="45">宮崎県</option>
+                              <option value="46">鹿児島県</option>
+                              <option value="47">沖縄県</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button id="kenbtn" type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="collapse" href="#answer1">選択する</button>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="kaiwa collapse" id="answer1">
             <figure class="kaiwa-img-right"><img src="assets/img/03.png"></figure>
             <div class="kaiwa-text-left">
+              <p id="ken" class="kaiwa-text">
+              </p>
+            </div>
+          </div>
+
+          <div class="kaiwa collapse" id="answer1">
+            <figure class="kaiwa-img-left"><img src="assets/img/02.png"></figure>
+            <div class="kaiwa-text-right">
               <p class="kaiwa-text">
-                ショートバージョンショートバージョンショートバージョンショートバージョンショートバージョンショートバージョンショートバージョンショートバージョンショートバージョンショートバージョンショートバージョンショートバージョン
+                あなたのこだわりを教えて下さい。
+              </p>
+            </div>
+          </div>
+
+          <span class="float-right collapse" id="answer1">
+            <button id="answer2" type="button" class="btn btn-primary collapse show" data-toggle="modal" data-target="#modal2">こだわり条件を選ぶ</button>
+          </span>
+
+          <!-- Modal -->
+          <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modal2Label" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modal2Label">こだわり条件選択</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <!-- こだわり -->
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="card">
+                          <div class="card-body">
+                            <select style="height: 400px" id="srh_room_type_param" class="custom-select srh_room_type_param" multiple>
+                              <option value="" disabled>こだわり条件を選んでください</option>
+                              <option value="12">日払いOK</option>
+                              <option value="14">未経験歓迎</option>
+                              <option value="23">服装自由</option>
+                              <option value="22">交通費／手当あり</option>
+                              <option value="21">オープニングスタッフ</option>
+                              <option value="20">大量募集</option>
+                              <option value="19">学生歓迎</option>
+                              <option value="18">経験者のみ</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button id="kodawaribtn" type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="collapse" href="#answer2">選択する</button>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="kaiwa collapse" id="answer2">
+            <figure class="kaiwa-img-right"><img src="assets/img/03.png"></figure>
+            <div class="kaiwa-text-left">
+              <p id="kodawari" class="kaiwa-text">
               </p>
             </div>
           </div>
@@ -58,10 +202,83 @@
     </div>
   </div>
 
+  <div class="collapse" id="answer2">
+    <div class="container-fluid">
+      <div class="row py-3">
+        <div class="col-lg-3 col-md-3 col-sm-12 mx-auto">
+          <a class="btn btn-primary full-width" href="https://sigotora.jp/index.cfm?fuseaction=job.joblist" id="search" target="_blank">カスタマイズ求人一覧</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script src="js/smooth-scroll.js"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+  <script>
+    $(function() {
+      // button要素をクリックしたら発動
+      $('button#kenbtn').click(function() {
+        // セレクトボックスで選択したvalue値を変数に格納
+        var ken = $('#srh_ken_param option:selected').text();
+        // p要素にvauleを出力
+        $('p#ken').text(ken);
+      });
+    });
+  </script>
+  <script>
+    $(function() {
+      $('.srh_room_type_param').select2({
+        "width": "100%",
+        closeOnSelect: false
+      });
+    });
+  </script>
+  <script>
+    $(function() {
+      // button要素をクリックしたら発動
+      $('button#kodawaribtn').click(function() {
+        // ①配列の変数を宣言
+        var kodawari = [];
+        // ②選択したoption要素をeachで1つずつループ処理
+        $('#srh_room_type_param option:selected').each(function() {
+          // ③セレクトボックスで選択したテキストを1つずつ配列に格納
+          kodawari.push($(this).text());
+        });
+        // p要素にテキストを出力
+        $('p#kodawari').text(kodawari);
+      });
+    });
+  </script>
+  <script type="text/javascript">
+    $(function() {
+      var href = "https://sigotora.jp/index.cfm";
+      $('.srh_ken_param,#srh_room_type_param').on('change', function() {
+        var srh_ken_param = $('.srh_ken_param').val();
+        var srh_room_type_param = $('#srh_room_type_param').map(function() {
+          return $(this).val();
+        }).get();
+        $('#search').prop('href', href + "?fuseaction=job.joblist&srh_ken_param=" + srh_ken_param + "&srh_room_type_param=" + srh_room_type_param);
+      });
+    });
+  </script>
+  <style type="text/css">/* iphone用 */
+select {
+font-size: 16px;
+}
+input[type="text"] {
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 16px!important;
+}
+/* セレクトボックス複数選択用 */
+.select2-container{box-sizing:border-box;display:inline-block;margin:0;position:relative;vertical-align:middle}.select2-container .select2-selection--single{box-sizing:border-box;cursor:pointer;display:block;height:28px;user-select:none;-webkit-user-select:none}.select2-container .select2-selection--single .select2-selection__rendered{display:block;padding-left:8px;padding-right:20px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.select2-container .select2-selection--single .select2-selection__clear{position:relative}.select2-container[dir="rtl"] .select2-selection--single .select2-selection__rendered{padding-right:8px;padding-left:20px}.select2-container .select2-selection--multiple{box-sizing:border-box;cursor:pointer;display:block;min-height:32px;user-select:none;-webkit-user-select:none}.select2-container .select2-selection--multiple .select2-selection__rendered{display:inline-block;overflow:hidden;padding-left:8px;text-overflow:ellipsis;white-space:nowrap}.select2-container .select2-search--inline{float:left}.select2-container .select2-search--inline .select2-search__field{box-sizing:border-box;border:none;font-size:16px;margin-top:5px;padding:0}.select2-container .select2-search--inline .select2-search__field::-webkit-search-cancel-button{-webkit-appearance:none}.select2-dropdown{background-color:white;border:1px solid #aaa;border-radius:4px;box-sizing:border-box;display:block;position:absolute;left:-100000px;width:100%;z-index:1051}.select2-results{display:block}.select2-results__options{list-style:none;margin:0;padding:0}.select2-results__option{padding:6px;user-select:none;-webkit-user-select:none}.select2-results__option[aria-selected]{cursor:pointer}.select2-container--open .select2-dropdown{left:0}.select2-container--open .select2-dropdown--above{border-bottom:none;border-bottom-left-radius:0;border-bottom-right-radius:0}.select2-container--open .select2-dropdown--below{border-top:none;border-top-left-radius:0;border-top-right-radius:0}.select2-search--dropdown{display:block;padding:4px}.select2-search--dropdown .select2-search__field{padding:4px;width:100%;box-sizing:border-box}.select2-search--dropdown .select2-search__field::-webkit-search-cancel-button{-webkit-appearance:none}.select2-search--dropdown.select2-search--hide{display:none}.select2-close-mask{border:0;margin:0;padding:0;display:block;position:fixed;left:0;top:0;min-height:100%;min-width:100%;height:auto;width:auto;opacity:0;z-index:99;background-color:#fff;filter:alpha(opacity=0)}.select2-hidden-accessible{border:0 !important;clip:rect(0 0 0 0) !important;-webkit-clip-path:inset(50%) !important;clip-path:inset(50%) !important;height:1px !important;overflow:hidden !important;padding:0 !important;position:absolute !important;width:1px !important;white-space:nowrap !important}.select2-container--default .select2-selection--single{background-color:#fff;border:1px solid #aaa;border-radius:4px}.select2-container--default .select2-selection--single .select2-selection__rendered{color:#444;line-height:28px}.select2-container--default .select2-selection--single .select2-selection__clear{cursor:pointer;float:right;font-weight:bold}.select2-container--default .select2-selection--single .select2-selection__placeholder{color:#999}.select2-container--default .select2-selection--single .select2-selection__arrow{height:26px;position:absolute;top:1px;right:1px;width:20px}.select2-container--default .select2-selection--single .select2-selection__arrow b{border-color:#888 transparent transparent transparent;border-style:solid;border-width:5px 4px 0 4px;height:0;left:50%;margin-left:-4px;margin-top:-2px;position:absolute;top:50%;width:0}.select2-container--default[dir="rtl"] .select2-selection--single .select2-selection__clear{float:left}.select2-container--default[dir="rtl"] .select2-selection--single .select2-selection__arrow{left:1px;right:auto}.select2-container--default.select2-container--disabled .select2-selection--single{background-color:#eee;cursor:default}.select2-container--default.select2-container--disabled .select2-selection--single .select2-selection__clear{display:none}.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b{border-color:transparent transparent #888 transparent;border-width:0 4px 5px 4px}.select2-container--default .select2-selection--multiple{background-color:white;border:1px solid #aaa;border-radius:4px;cursor:pointer}.select2-container--default .select2-selection--multiple .select2-selection__rendered{box-sizing:border-box;list-style:none;margin:0;padding:0 5px;width:100%}.select2-container--default .select2-selection--multiple .select2-selection__rendered li{list-style:none}.select2-container--default .select2-selection--multiple .select2-selection__clear{cursor:pointer;float:right;font-weight:bold;margin-top:5px;margin-right:10px;padding:1px}.select2-container--default .select2-selection--multiple .select2-selection__choice{background-color:#e4e4e4;border:1px solid #aaa;border-radius:4px;cursor:default;float:left;margin-right:5px;margin-top:5px;padding:0 5px}.select2-container--default .select2-selection--multiple .select2-selection__choice__remove{color:#999;cursor:pointer;display:inline-block;font-weight:bold;margin-right:2px}.select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover{color:#333}.select2-container--default[dir="rtl"] .select2-selection--multiple .select2-selection__choice,.select2-container--default[dir="rtl"] .select2-selection--multiple .select2-search--inline{float:right}.select2-container--default[dir="rtl"] .select2-selection--multiple .select2-selection__choice{margin-left:5px;margin-right:auto}.select2-container--default[dir="rtl"] .select2-selection--multiple .select2-selection__choice__remove{margin-left:2px;margin-right:auto}.select2-container--default.select2-container--focus .select2-selection--multiple{border:solid black 1px;outline:0}.select2-container--default.select2-container--disabled .select2-selection--multiple{background-color:#eee;cursor:default}.select2-container--default.select2-container--disabled .select2-selection__choice__remove{display:none}.select2-container--default.select2-container--open.select2-container--above .select2-selection--single,.select2-container--default.select2-container--open.select2-container--above .select2-selection--multiple{border-top-left-radius:0;border-top-right-radius:0}.select2-container--default.select2-container--open.select2-container--below .select2-selection--single,.select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple{border-bottom-left-radius:0;border-bottom-right-radius:0}.select2-container--default .select2-search--dropdown .select2-search__field{border:1px solid #aaa}.select2-container--default .select2-search--inline .select2-search__field{background:transparent;border:none;outline:0;box-shadow:none;-webkit-appearance:textfield}.select2-container--default .select2-results>.select2-results__options{max-height:300px;overflow-y:auto}.select2-container--default .select2-results__option[role=group]{padding:0}.select2-container--default .select2-results__option[aria-disabled=true]{color:#999}.select2-container--default .select2-results__option[aria-selected=true]{background-color:#ddd}.select2-container--default .select2-results__option .select2-results__option{padding-left:1em}.select2-container--default .select2-results__option .select2-results__option .select2-results__group{padding-left:0}.select2-container--default .select2-results__option .select2-results__option .select2-results__option{margin-left:-1em;padding-left:2em}.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-2em;padding-left:3em}.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-3em;padding-left:4em}.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-4em;padding-left:5em}.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-5em;padding-left:6em}.select2-container--default .select2-results__option--highlighted[aria-selected]{background-color:#5897fb;color:white}.select2-container--default .select2-results__group{cursor:default;display:block;padding:6px}.select2-container--classic .select2-selection--single{background-color:#f7f7f7;border:1px solid #aaa;border-radius:4px;outline:0;background-image:-webkit-linear-gradient(top, #fff 50%, #eee 100%);background-image:-o-linear-gradient(top, #fff 50%, #eee 100%);background-image:linear-gradient(to bottom, #fff 50%, #eee 100%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEEEEEE', GradientType=0)}.select2-container--classic .select2-selection--single:focus{border:1px solid #5897fb}.select2-container--classic .select2-selection--single .select2-selection__rendered{color:#444;line-height:28px}.select2-container--classic .select2-selection--single .select2-selection__clear{cursor:pointer;float:right;font-weight:bold;margin-right:10px}.select2-container--classic .select2-selection--single .select2-selection__placeholder{color:#999}.select2-container--classic .select2-selection--single .select2-selection__arrow{background-color:#ddd;border:none;border-left:1px solid #aaa;border-top-right-radius:4px;border-bottom-right-radius:4px;height:26px;position:absolute;top:1px;right:1px;width:20px;background-image:-webkit-linear-gradient(top, #eee 50%, #ccc 100%);background-image:-o-linear-gradient(top, #eee 50%, #ccc 100%);background-image:linear-gradient(to bottom, #eee 50%, #ccc 100%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='#FFCCCCCC', GradientType=0)}.select2-container--classic .select2-selection--single .select2-selection__arrow b{border-color:#888 transparent transparent transparent;border-style:solid;border-width:5px 4px 0 4px;height:0;left:50%;margin-left:-4px;margin-top:-2px;position:absolute;top:50%;width:0}.select2-container--classic[dir="rtl"] .select2-selection--single .select2-selection__clear{float:left}.select2-container--classic[dir="rtl"] .select2-selection--single .select2-selection__arrow{border:none;border-right:1px solid #aaa;border-radius:0;border-top-left-radius:4px;border-bottom-left-radius:4px;left:1px;right:auto}.select2-container--classic.select2-container--open .select2-selection--single{border:1px solid #5897fb}.select2-container--classic.select2-container--open .select2-selection--single .select2-selection__arrow{background:transparent;border:none}.select2-container--classic.select2-container--open .select2-selection--single .select2-selection__arrow b{border-color:transparent transparent #888 transparent;border-width:0 4px 5px 4px}.select2-container--classic.select2-container--open.select2-container--above .select2-selection--single{border-top:none;border-top-left-radius:0;border-top-right-radius:0;background-image:-webkit-linear-gradient(top, #fff 0%, #eee 50%);background-image:-o-linear-gradient(top, #fff 0%, #eee 50%);background-image:linear-gradient(to bottom, #fff 0%, #eee 50%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEEEEEE', GradientType=0)}.select2-container--classic.select2-container--open.select2-container--below .select2-selection--single{border-bottom:none;border-bottom-left-radius:0;border-bottom-right-radius:0;background-image:-webkit-linear-gradient(top, #eee 50%, #fff 100%);background-image:-o-linear-gradient(top, #eee 50%, #fff 100%);background-image:linear-gradient(to bottom, #eee 50%, #fff 100%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='#FFFFFFFF', GradientType=0)}.select2-container--classic .select2-selection--multiple{background-color:white;border:1px solid #aaa;border-radius:4px;cursor:text;outline:0}.select2-container--classic .select2-selection--multiple:focus{border:1px solid #5897fb}.select2-container--classic .select2-selection--multiple .select2-selection__rendered{list-style:none;margin:0;padding:0 5px}.select2-container--classic .select2-selection--multiple .select2-selection__clear{display:none}.select2-container--classic .select2-selection--multiple .select2-selection__choice{background-color:#e4e4e4;border:1px solid #aaa;border-radius:4px;cursor:default;float:left;margin-right:5px;margin-top:5px;padding:0 5px}.select2-container--classic .select2-selection--multiple .select2-selection__choice__remove{color:#888;cursor:pointer;display:inline-block;font-weight:bold;margin-right:2px}.select2-container--classic .select2-selection--multiple .select2-selection__choice__remove:hover{color:#555}.select2-container--classic[dir="rtl"] .select2-selection--multiple .select2-selection__choice{float:right;margin-left:5px;margin-right:auto}.select2-container--classic[dir="rtl"] .select2-selection--multiple .select2-selection__choice__remove{margin-left:2px;margin-right:auto}.select2-container--classic.select2-container--open .select2-selection--multiple{border:1px solid #5897fb}.select2-container--classic.select2-container--open.select2-container--above .select2-selection--multiple{border-top:none;border-top-left-radius:0;border-top-right-radius:0}.select2-container--classic.select2-container--open.select2-container--below .select2-selection--multiple{border-bottom:none;border-bottom-left-radius:0;border-bottom-right-radius:0}.select2-container--classic .select2-search--dropdown .select2-search__field{border:1px solid #aaa;outline:0}.select2-container--classic .select2-search--inline .select2-search__field{outline:0;box-shadow:none}.select2-container--classic .select2-dropdown{background-color:#fff;border:1px solid transparent}.select2-container--classic .select2-dropdown--above{border-bottom:none}.select2-container--classic .select2-dropdown--below{border-top:none}.select2-container--classic .select2-results>.select2-results__options{max-height:200px;overflow-y:auto}.select2-container--classic .select2-results__option[role=group]{padding:0}.select2-container--classic .select2-results__option[aria-disabled=true]{color:grey}.select2-container--classic .select2-results__option--highlighted[aria-selected]{background-color:#3875d7;color:#fff}.select2-container--classic .select2-results__group{cursor:default;display:block;padding:6px}.select2-container--classic.select2-container--open .select2-dropdown{border-color:#5897fb}
+</style>
+
 </body>
 
 </html>
