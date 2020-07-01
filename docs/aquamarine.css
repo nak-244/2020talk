@@ -2078,7 +2078,7 @@ input[type="button"].btn-block {
   height: 0;
   overflow: hidden;
   /* transition: height 0.35s ease; } */
-  transition: height 0.001s ease; }
+  transition: height 0.005s ease; }
   @media screen and (prefers-reduced-motion: reduce) {
     .collapsing {
       transition: none; } }
