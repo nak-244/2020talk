@@ -383,7 +383,29 @@
     ScrollReveal().reveal('.efectleft', efectleft);
     ScrollReveal().reveal('.efectright', efectright);
   </script>
+  <script>
+    $(function() {
+      $('#kodawaribtn').attr('disabled', 'disabled');
+      $('[name="room"]').click(function() {
+        if ($(this).prop('checked') == false) {
+          $('#kodawaribtn').attr('disabled', 'disabled');
+        } else {
+          $('#kodawaribtn').removeAttr('disabled');
+        }
+      });
+    });
 
+    $(function() {
+      $('#shiftbtn').attr('disabled', 'disabled');
+      $('[name="shift"]').click(function() {
+        if ($(this).prop('checked') == false) {
+          $('#shiftbtn').attr('disabled', 'disabled');
+        } else {
+          $('#shiftbtn').removeAttr('disabled');
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
