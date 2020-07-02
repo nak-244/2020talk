@@ -64,7 +64,6 @@
                         <div class="card">
                           <div class="card-body">
                             <select id="srh_ken_param" class="custom-select srh_ken_param">
-                              <option value="" selected>都道府県を選んでください</option>
                               <option value="1">北海道</option>
                               <option value="2">青森県</option>
                               <option value="3">岩手県</option>
@@ -120,7 +119,7 @@
                   </div>
                 </div>
                 <div class="modal-footer">
-                    <button id="kenbtn" type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="collapse" href="#answer1">選択する</button>
+                  <button id="kenbtn" type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="collapse" href="#answer1">選択する</button>
                   <p></p>
                 </div>
               </div>
@@ -323,6 +322,7 @@
 
   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+  <!-- 選択した内容を発信 -->
   <script>
     $(function() {
       // button要素をクリックしたら発動
@@ -334,6 +334,7 @@
       });
     });
   </script>
+  <!-- 選択した内容を発信 -->
   <script>
     $(function() {
       $('button#kodawaribtn').click(function() {
@@ -344,6 +345,7 @@
       });
     });
   </script>
+  <!-- 選択した内容を発信 -->
   <script>
     $(function() {
       $('button#shiftbtn').click(function() {
@@ -354,6 +356,7 @@
       });
     });
   </script>
+  <!-- 検索パラメータ -->
   <script type="text/javascript">
     $(function() {
       var href = "https://sigotora.jp/index.cfm";
@@ -369,6 +372,7 @@
       });
     });
   </script>
+  <!-- 最初のアニメーション -->
   <script>
     var efectleft = {
       delay: 300, //アニメーションの発生タイミング
@@ -383,6 +387,7 @@
     ScrollReveal().reveal('.efectleft', efectleft);
     ScrollReveal().reveal('.efectright', efectright);
   </script>
+  <!-- チェックボックス　選ばないとボタンが押せないように -->
   <script>
     $(function() {
       $('#kodawaribtn').attr('disabled', 'disabled');
@@ -404,6 +409,14 @@
           $('#shiftbtn').removeAttr('disabled');
         }
       });
+    });
+  </script>
+  <!-- collapse イベント後 -->
+  <script>
+    $(document).on('shown.bs.collapse', '.collapse', function() {
+      var element = document.documentElement;
+      var bottom = element.scrollHeight - element.clientHeight;
+      window.scroll(0, bottom);
     });
   </script>
 
