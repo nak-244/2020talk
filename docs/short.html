@@ -169,30 +169,33 @@
                           <div class="card-body">
                             <div class="custom-control custom-switch">
                               <div class="row">
-                                <div class="col-6">
-                                  <label><input type="checkbox" name="os" class="custom-control-input srh_room_type_param" id="日払いOK" value="12"><label class="custom-control-label" for="日払いOK">日払いOK</label></label>
+                                <div class="col-12">
+                                  <p class="small">1つ以上選んでください</p>
                                 </div>
                                 <div class="col-6">
-                                  <label><input type="checkbox" name="os" class="custom-control-input srh_room_type_param" id="未経験歓迎" value="14">
-                                  <label class="custom-control-label" for="未経験歓迎">未経験歓迎</label></label>
+                                  <label><input type="checkbox" name="room" class="custom-control-input srh_room_type_param" id="日払いOK" value="12"><label class="custom-control-label" for="日払いOK">日払いOK</label></label>
                                 </div>
                                 <div class="col-6">
-                                  <label><input type="checkbox" name="os" class="custom-control-input srh_room_type_param" id="服装自由" value="23"><label class="custom-control-label" for="服装自由">服装自由</label></label>
+                                  <label><input type="checkbox" name="room" class="custom-control-input srh_room_type_param" id="未経験歓迎" value="14">
+                                    <label class="custom-control-label" for="未経験歓迎">未経験歓迎</label></label>
                                 </div>
                                 <div class="col-6">
-                                  <label><input type="checkbox" name="os" class="custom-control-input srh_room_type_param" id="交通費／手当あり" value="22"><label class="custom-control-label" for="交通費／手当あり">交通費／手当あり</label></label>
+                                  <label><input type="checkbox" name="room" class="custom-control-input srh_room_type_param" id="服装自由" value="23"><label class="custom-control-label" for="服装自由">服装自由</label></label>
                                 </div>
                                 <div class="col-6">
-                                  <label><input type="checkbox" name="os" class="custom-control-input srh_room_type_param" id="オープニングスタッフ" value="21"><label class="custom-control-label" for="オープニングスタッフ">オープニングスタッフ</label></label>
+                                  <label><input type="checkbox" name="room" class="custom-control-input srh_room_type_param" id="交通費／手当あり" value="22"><label class="custom-control-label" for="交通費／手当あり">交通費／手当あり</label></label>
                                 </div>
                                 <div class="col-6">
-                                  <label><input type="checkbox" name="os" class="custom-control-input srh_room_type_param" id="大量募集" value="20"><label class="custom-control-label" for="大量募集">大量募集</label></label>
+                                  <label><input type="checkbox" name="room" class="custom-control-input srh_room_type_param" id="オープニングスタッフ" value="21"><label class="custom-control-label" for="オープニングスタッフ">オープニングスタッフ</label></label>
                                 </div>
                                 <div class="col-6">
-                                  <label><input type="checkbox" name="os" class="custom-control-input srh_room_type_param" id="学生歓迎" value="19"><label class="custom-control-label" for="学生歓迎">学生歓迎</label></label>
+                                  <label><input type="checkbox" name="room" class="custom-control-input srh_room_type_param" id="大量募集" value="20"><label class="custom-control-label" for="大量募集">大量募集</label></label>
                                 </div>
                                 <div class="col-6">
-                                  <label><input type="checkbox" name="os" class="custom-control-input srh_room_type_param" id="経験者のみ" value="18"><label class="custom-control-label" for="経験者のみ">経験者のみ</label></label>
+                                  <label><input type="checkbox" name="room" class="custom-control-input srh_room_type_param" id="学生歓迎" value="19"><label class="custom-control-label" for="学生歓迎">学生歓迎</label></label>
+                                </div>
+                                <div class="col-6">
+                                  <label><input type="checkbox" name="room" class="custom-control-input srh_room_type_param" id="経験者のみ" value="18"><label class="custom-control-label" for="経験者のみ">経験者のみ</label></label>
                                 </div>
                               </div>
                             </div>
@@ -218,12 +221,92 @@
             </div>
           </div>
 
+          <div class="kaiwa collapse" id="answer2">
+            <figure class="kaiwa-img-left"><img src="assets/img/02.png"></figure>
+            <div class="kaiwa-text-right">
+              <p class="kaiwa-text">
+                どんな働き方がいいですか？
+              </p>
+            </div>
+          </div>
+
+          <span class="float-right collapse" id="answer2">
+            <div class="float-right collapse show" id="answer3">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal3">働き方を選ぶ</button>
+            </div>
+          </span>
+
+          <!-- Modal -->
+          <div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="modal3Label" aria-hidden="true" data-backdrop="static">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modal3Label">働き方選択</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <!-- こだわり -->
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="card">
+                          <div class="card-body">
+                            <div class="custom-control custom-switch">
+                              <div class="row">
+                                <div class="col-12">
+                                  <p class="small">1つ以上選んでください</p>
+                                </div>
+                                <div class="col-6">
+                                  <label><input type="checkbox" name="shift" class="custom-control-input srh_shift_param" id="派遣" value="1"><label class="custom-control-label" for="派遣">派遣</label></label>
+                                </div>
+                                <div class="col-6">
+                                  <label><input type="checkbox" name="shift" class="custom-control-input srh_shift_param" id="アルバイト" value="2">
+                                    <label class="custom-control-label" for="アルバイト">アルバイト</label></label>
+                                </div>
+                                <div class="col-6">
+                                  <label><input type="checkbox" name="shift" class="custom-control-input srh_shift_param" id="紹介予定派遣" value="3"><label class="custom-control-label" for="紹介予定派遣">紹介予定派遣</label></label>
+                                </div>
+                                <div class="col-6">
+                                  <label><input type="checkbox" name="shift" class="custom-control-input srh_shift_param" id="紹介" value="4"><label class="custom-control-label" for="紹介">紹介</label></label>
+                                </div>
+                                <div class="col-6">
+                                  <label><input type="checkbox" name="shift" class="custom-control-input srh_shift_param" id="契約社員" value="5"><label class="custom-control-label" for="契約社員">契約社員</label></label>
+                                </div>
+                                <div class="col-6">
+                                  <label><input type="checkbox" name="shift" class="custom-control-input srh_shift_param" id="正社員" value="6"><label class="custom-control-label" for="正社員">正社員</label></label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button id="shiftbtn" type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="collapse" href="#answer3">選択する</button>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="kaiwa collapse" id="answer3">
+            <figure class="kaiwa-img-right"><img src="assets/img/03.png"></figure>
+            <div class="kaiwa-text-left">
+              <p id="shift" class="kaiwa-text">
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   </div>
 
-  <div class="collapse" id="answer2">
+  <div class="collapse" id="answer3">
     <div class="container-fluid">
       <div class="row py-3">
         <div class="col-lg-3 col-md-3 col-sm-12 mx-auto">
@@ -254,22 +337,35 @@
   <script>
     $(function() {
       $('button#kodawaribtn').click(function() {
-        var kodawari = $('[name="os"]:checked').map(function() {
+        var kodawari = $('[name="room"]:checked').map(function() {
           return $(this).parent('label').text();
         }).get();
         $('p#kodawari').text(kodawari);
       });
     });
   </script>
+  <script>
+    $(function() {
+      $('button#shiftbtn').click(function() {
+        var shift = $('[name="shift"]:checked').map(function() {
+          return $(this).parent('label').text();
+        }).get();
+        $('p#shift').text(shift);
+      });
+    });
+  </script>
   <script type="text/javascript">
     $(function() {
       var href = "https://sigotora.jp/index.cfm";
-      $('.srh_ken_param,.srh_room_type_param').on('change', function() {
+      $('.srh_ken_param,.srh_room_type_param,.srh_shift_param').on('change', function() {
         var srh_ken_param = $('.srh_ken_param').val();
         var srh_room_type_param = $('.srh_room_type_param:checked').map(function() {
           return $(this).val();
         }).get();
-        $('#search').prop('href', href + "?fuseaction=job.joblist&srh_ken_param=" + srh_ken_param + "&srh_room_type_param=" + srh_room_type_param);
+        var srh_shift_param = $('.srh_shift_param:checked').map(function() {
+          return $(this).val();
+        }).get();
+        $('#search').prop('href', href + "?fuseaction=job.joblist&srh_ken_param=" + srh_ken_param + "&srh_room_type_param=" + srh_room_type_param + "&srh_shift_param=" + srh_shift_param);
       });
     });
   </script>
