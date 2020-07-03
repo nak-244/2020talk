@@ -398,6 +398,79 @@
               </div>
             </div>
 
+            <div class="kaiwa collapse" id="answer4">
+              <figure class="kaiwa-img-left"><img src="assets/img/02.png"></figure>
+              <div class="kaiwa-text-right">
+                <p class="kaiwa-text">
+                  どのくらいの期間で考えてますか？
+                </p>
+              </div>
+            </div>
+
+            <span class="float-right collapse" id="answer4">
+              <div class="float-right collapse show" id="answer5">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal5">希望勤務期間を選ぶ</button>
+              </div>
+            </span>
+
+            <!-- Modal -->
+            <div class="modal fade" id="modal5" tabindex="-1" role="dialog" aria-labelledby="modal5Label" aria-hidden="true" data-backdrop="static">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="modal5Label">希望勤務期間を選ぶ</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="form-group">
+                      <!-- 希望勤務期間 -->
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="card">
+                            <div class="card-body">
+                              <div class="custom-control custom-switch">
+                                <div class="row">
+                                  <div class="col-12">
+                                    <p class="small">1つ以上選んでください</p>
+                                  </div>
+                                  <div class="col-6">
+                                    <label><input type="checkbox" name="span" class="custom-control-input srh_span_param" id="1週間以内" value="1"><label class="custom-control-label" for="1週間以内">1週間以内</label></label>
+                                  </div>
+                                  <div class="col-6">
+                                    <label><input type="checkbox" name="span" class="custom-control-input srh_span_param" id="1週間～1ヶ月" value="2"><label class="custom-control-label" for="1週間～1ヶ月">1週間～1ヶ月</label></label>
+                                  </div>
+                                  <div class="col-6">
+                                    <label><input type="checkbox" name="span" class="custom-control-input srh_span_param" id="1ヶ月～3ヶ月" value="3"><label class="custom-control-label" for="1ヶ月～3ヶ月">1ヶ月～3ヶ月</label></label>
+                                  </div>
+                                  <div class="col-6">
+                                    <label><input type="checkbox" name="span" class="custom-control-input srh_span_param" id="3ヶ月以上" value="4"><label class="custom-control-label" for="3ヶ月以上">3ヶ月以上</label></label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button id="spanbtn" type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="collapse" href="#answer5">選択する</button>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="kaiwa collapse" id="answer5">
+              <figure class="kaiwa-img-right"><img src="assets/img/03.png"></figure>
+              <div class="kaiwa-text-left">
+                <p id="span" class="kaiwa-text">
+                </p>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -405,7 +478,7 @@
 
 
     <!-- 最後前 -->
-    <div class="collapse" id="answer4">
+    <div class="collapse" id="answer5">
       <div class="container">
         <div class="row py-3">
           <div class="col-lg-6 col-md-6 col-sm-12 mx-auto">
@@ -497,11 +570,22 @@
       });
     });
   </script>
+  <!-- 選択した内容を発信 -->
+  <script>
+    $(function() {
+      $('button#spanbtn').click(function() {
+        var span = $('[name="span"]:checked').map(function() {
+          return $(this).parent('label').text();
+        }).get();
+        $('p#span').text(span);
+      });
+    });
+  </script>
   <!-- 検索パラメータ -->
   <script type="text/javascript">
     $(function() {
       var href = "https://sigotora.jp/index.cfm";
-      $('.srh_ken_param,.srh_room_type_param,.srh_shift_param,.srh_jobtype_param').on('change', function() {
+      $('.srh_ken_param,.srh_room_type_param,.srh_shift_param,.srh_jobtype_param,.srh_span_param').on('change', function() {
         var srh_ken_param = $('.srh_ken_param').val();
         var srh_room_type_param = $('.srh_room_type_param:checked').map(function() {
           return $(this).val();
@@ -512,7 +596,10 @@
         var srh_jobtype_param = $('.srh_jobtype_param:checked').map(function() {
           return $(this).val();
         }).get();
-        $('#search').prop('href', href + "?fuseaction=job.joblist&srh_ken_param=" + srh_ken_param + "&srh_room_type_param=" + srh_room_type_param + "&srh_shift_param=" + srh_shift_param + "&srh_jobtype_param=" + srh_jobtype_param);
+        var srh_span_param = $('.srh_span_param:checked').map(function() {
+          return $(this).val();
+        }).get();
+        $('#search').prop('href', href + "?fuseaction=job.joblist&srh_ken_param=" + srh_ken_param + "&srh_room_type_param=" + srh_room_type_param + "&srh_shift_param=" + srh_shift_param + "&srh_jobtype_param=" + srh_jobtype_param + "&srh_span_param=" + srh_span_param);
       });
     });
   </script>
@@ -562,6 +649,17 @@
           $('#jobtypebtn').attr('disabled', 'disabled');
         } else {
           $('#jobtypebtn').removeAttr('disabled');
+        }
+      });
+    });
+
+    $(function() {
+      $('#spanbtn').attr('disabled', 'disabled');
+      $('[name="span"]').click(function() {
+        if ($(this).prop('checked') == false) {
+          $('#spanbtn').attr('disabled', 'disabled');
+        } else {
+          $('#spanbtn').removeAttr('disabled');
         }
       });
     });
