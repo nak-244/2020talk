@@ -117,7 +117,7 @@ p.kaiwa-text:last-child {
 /* 横幅を長くする */
 @media (min-width: 1200px) {
   .container {
-    max-width: 1200px !important;
+    max-width: 800px !important;
   }
 
   /* iphone用 */
