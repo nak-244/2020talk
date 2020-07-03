@@ -342,8 +342,7 @@
                                     <label><input type="checkbox" name="jobtype" class="custom-control-input srh_jobtype_param" id="オフィス事務" value="1"><label class="custom-control-label" for="オフィス事務">オフィス事務</label></label>
                                   </div>
                                   <div class="col-6">
-                                    <label><input type="checkbox" name="jobtype" class="custom-control-input srh_jobtype_param" id="営業" value="2">
-                                      <label class="custom-control-label" for="営業">営業</label></label>
+                                    <label><input type="checkbox" name="jobtype" class="custom-control-input srh_jobtype_param" id="営業" value="2"><label class="custom-control-label" for="営業">営業</label></label>
                                   </div>
                                   <div class="col-6">
                                     <label><input type="checkbox" name="jobtype" class="custom-control-input srh_jobtype_param" id="IT・エンジニア" value="3"><label class="custom-control-label" for="IT・エンジニア">IT・エンジニア</label></label>
@@ -418,7 +417,7 @@
 
 
     <!-- 最後前 -->
-    <div class="" id="answer10">
+    <div class="collapse" id="answer4">
       <div class="container">
         <div class="row py-3">
           <div class="col-lg-6 col-md-6 col-sm-12 mx-auto">
@@ -514,7 +513,7 @@
   <script type="text/javascript">
     $(function() {
       var href = "https://sigotora.jp/index.cfm";
-      $('.srh_ken_param,.srh_room_type_param,.srh_shift_param').on('change', function() {
+      $('.srh_ken_param,.srh_room_type_param,.srh_shift_param,.srh_jobtype_param').on('change', function() {
         var srh_ken_param = $('.srh_ken_param').val();
         var srh_room_type_param = $('.srh_room_type_param:checked').map(function() {
           return $(this).val();
@@ -522,7 +521,10 @@
         var srh_shift_param = $('.srh_shift_param:checked').map(function() {
           return $(this).val();
         }).get();
-        $('#search').prop('href', href + "?fuseaction=job.joblist&srh_ken_param=" + srh_ken_param + "&srh_room_type_param=" + srh_room_type_param + "&srh_shift_param=" + srh_shift_param);
+        var srh_jobtype_param = $('.srh_jobtype_param:checked').map(function() {
+          return $(this).val();
+        }).get();
+        $('#search').prop('href', href + "?fuseaction=job.joblist&srh_ken_param=" + srh_ken_param + "&srh_room_type_param=" + srh_room_type_param + "&srh_shift_param=" + srh_shift_param + "&srh_jobtype_param=" + srh_jobtype_param);
       });
     });
   </script>
