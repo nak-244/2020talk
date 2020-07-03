@@ -45,7 +45,7 @@
   position: relative;
   margin-left: 80px;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 20px 20px 20px 20px;
   background: #eee;
   margin-right: 12%;
   float: left;
@@ -57,7 +57,7 @@
   position: relative;
   margin-right: 80px;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 20px 20px 20px 20px;
   background-color: #EF5110;
   margin-left: 12%;
   float: right;
@@ -85,8 +85,8 @@ p.kaiwa-text:last-child {
   content: '';
   border: 10px solid transparent;
   border-right: 10px solid #eee;
-  top: 15px;
-  left: -19px;
+  top: 12px;
+  left: -17px;
 }
 
 /* 右の三角形を作る */
@@ -103,8 +103,8 @@ p.kaiwa-text:last-child {
   content: '';
   border: 10px solid transparent;
   border-left: 10px solid #EF5110;
-  top: 15px;
-  right: -19px;
+  top: 12px;
+  right: -17px;
 }
 
 /* 回り込み解除 */
@@ -117,7 +117,7 @@ p.kaiwa-text:last-child {
 /* 横幅を長くする */
 @media (min-width: 1200px) {
   .container {
-    max-width: 1200px !important;
+    max-width: 800px !important;
   }
 
   /* iphone用 */
