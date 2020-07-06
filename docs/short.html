@@ -408,26 +408,48 @@
   </script>
   <!-- チェックボックス　選ばないとボタンが押せないように -->
   <script>
-    $(function() {
-      $('#kodawaribtn').attr('disabled', 'disabled');
-      $('[name="room"]').click(function() {
-        if ($(this).prop('checked') == false) {
-          $('#kodawaribtn').attr('disabled', 'disabled');
-        } else {
-          $('#kodawaribtn').removeAttr('disabled');
-        }
-      });
-    });
+    // $(function() {
+    //   $('#kodawaribtn').attr('disabled', 'disabled');
+    //   $('[name="room"]').click(function() {
+    //     if ($(this).prop('checked') == false) {
+    //       $('#kodawaribtn').attr('disabled', 'disabled');
+    //     } else {
+    //       $('#kodawaribtn').removeAttr('disabled');
+    //     }
+    //   });
+    // });
 
-    $(function() {
-      $('#shiftbtn').attr('disabled', 'disabled');
-      $('[name="shift"]').click(function() {
-        if ($(this).prop('checked') == false) {
-          $('#shiftbtn').attr('disabled', 'disabled');
-        } else {
-          $('#shiftbtn').removeAttr('disabled');
-        }
-      });
+    // $(function() {
+    //   $('#shiftbtn').attr('disabled', 'disabled');
+    //   $('[name="shift"]').click(function() {
+    //     if ($(this).prop('checked') == false) {
+    //       $('#shiftbtn').attr('disabled', 'disabled');
+    //     } else {
+    //       $('#shiftbtn').removeAttr('disabled');
+    //     }
+    //   });
+    // });
+
+    let focustag; //フォーカスされたタグを格納
+    let requiredsum; //requiredプロパティを持ったフォーム数を格納
+    $('#form').on("click",function(){
+        focustag = $(':focus').attr("type"); //フォーカスされたタグを取得
+        if(focustag == "submit"){
+            requiredsum = $('.q2:required').length; //requiredプロパティを持ったフォームを取得
+            if(requiredsum > 0){
+                $('.q2').each(function(index,element){
+                    validate(element); //バリデーションチェック
+                })
+            //バリデーションチェックが不要になったので、submitを実行する
+            }else{
+                var hd = $("<input>").attr({type:"hidden",name:"bt_submit"}).val("submit");
+                hd.appendTo($('#form'));
+                $('#form').attr({method:"post",action:"hogehoge.php"});
+                $('#form').submit();
+            }
+         }else{
+             return;
+         }
     });
   </script>
   <!-- collapse イベント後 -->
