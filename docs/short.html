@@ -408,48 +408,36 @@
   </script>
   <!-- チェックボックス　選ばないとボタンが押せないように -->
   <script>
-    // $(function() {
-    //   $('#kodawaribtn').attr('disabled', 'disabled');
-    //   $('[name="room"]').click(function() {
-    //     if ($(this).prop('checked') == false) {
-    //       $('#kodawaribtn').attr('disabled', 'disabled');
-    //     } else {
-    //       $('#kodawaribtn').removeAttr('disabled');
-    //     }
-    //   });
-    // });
+    $(function() {
+      // 初期状態のボタンは無効
+      $("#kodawaribtn").prop("disabled", true);
+      // チェックボックスの状態が変わったら（クリックされたら）
+      $("input[type='checkbox']").on('change', function() {
+        // チェックされているチェックボックスの数
+        if ($(".srh_room_type_param:checked").length > 0) {
+          // ボタン有効
+          $("#kodawaribtn").prop("disabled", false);
+        } else {
+          // ボタン無効
+          $("#kodawaribtn").prop("disabled", true);
+        }
+      });
+    });
 
-    // $(function() {
-    //   $('#shiftbtn').attr('disabled', 'disabled');
-    //   $('[name="shift"]').click(function() {
-    //     if ($(this).prop('checked') == false) {
-    //       $('#shiftbtn').attr('disabled', 'disabled');
-    //     } else {
-    //       $('#shiftbtn').removeAttr('disabled');
-    //     }
-    //   });
-    // });
-
-    let focustag; //フォーカスされたタグを格納
-    let requiredsum; //requiredプロパティを持ったフォーム数を格納
-    $('#form').on("click",function(){
-        focustag = $(':focus').attr("type"); //フォーカスされたタグを取得
-        if(focustag == "submit"){
-            requiredsum = $('.q2:required').length; //requiredプロパティを持ったフォームを取得
-            if(requiredsum > 0){
-                $('.q2').each(function(index,element){
-                    validate(element); //バリデーションチェック
-                })
-            //バリデーションチェックが不要になったので、submitを実行する
-            }else{
-                var hd = $("<input>").attr({type:"hidden",name:"bt_submit"}).val("submit");
-                hd.appendTo($('#form'));
-                $('#form').attr({method:"post",action:"hogehoge.php"});
-                $('#form').submit();
-            }
-         }else{
-             return;
-         }
+    $(function() {
+      // 初期状態のボタンは無効
+      $("#shiftbtn").prop("disabled", true);
+      // チェックボックスの状態が変わったら（クリックされたら）
+      $("input[type='checkbox']").on('change', function() {
+        // チェックされているチェックボックスの数
+        if ($(".srh_shift_param:checked").length > 0) {
+          // ボタン有効
+          $("#shiftbtn").prop("disabled", false);
+        } else {
+          // ボタン無効
+          $("#shiftbtn").prop("disabled", true);
+        }
+      });
     });
   </script>
   <!-- collapse イベント後 -->

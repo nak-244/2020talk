@@ -599,7 +599,8 @@
         var srh_span_param = $('.srh_span_param:checked').map(function() {
           return $(this).val();
         }).get();
-        $('#search').prop('href', href + "?fuseaction=job.joblist&srh_ken_param=" + srh_ken_param + "&srh_room_type_param=" + srh_room_type_param + "&srh_shift_param=" + srh_shift_param + "&srh_jobtype_param=" + srh_jobtype_param + "&srh_span_param=" + srh_span_param);
+        $('#search').prop('href', href + "?fuseaction=job.joblist&srh_ken_param=" + srh_ken_param + "&srh_room_type_param=" + srh_room_type_param + "&srh_shift_param=" + srh_shift_param + "&srh_jobtype_param=" + srh_jobtype_param +
+          "&srh_span_param=" + srh_span_param);
       });
     });
   </script>
@@ -621,45 +622,65 @@
   <!-- チェックボックス　選ばないとボタンが押せないように -->
   <script>
     $(function() {
-      $('#kodawaribtn').attr('disabled', 'disabled');
-      $('[name="room"]').click(function() {
-        if ($(this).prop('checked') == false) {
-          $('#kodawaribtn').attr('disabled', 'disabled');
+      // 初期状態のボタンは無効
+      $("#kodawaribtn").prop("disabled", true);
+      // チェックボックスの状態が変わったら（クリックされたら）
+      $("input[type='checkbox']").on('change', function() {
+        // チェックされているチェックボックスの数
+        if ($(".srh_room_type_param:checked").length > 0) {
+          // ボタン有効
+          $("#kodawaribtn").prop("disabled", false);
         } else {
-          $('#kodawaribtn').removeAttr('disabled');
+          // ボタン無効
+          $("#kodawaribtn").prop("disabled", true);
         }
       });
     });
 
     $(function() {
-      $('#shiftbtn').attr('disabled', 'disabled');
-      $('[name="shift"]').click(function() {
-        if ($(this).prop('checked') == false) {
-          $('#shiftbtn').attr('disabled', 'disabled');
+      // 初期状態のボタンは無効
+      $("#shiftbtn").prop("disabled", true);
+      // チェックボックスの状態が変わったら（クリックされたら）
+      $("input[type='checkbox']").on('change', function() {
+        // チェックされているチェックボックスの数
+        if ($(".srh_shift_param:checked").length > 0) {
+          // ボタン有効
+          $("#shiftbtn").prop("disabled", false);
         } else {
-          $('#shiftbtn').removeAttr('disabled');
+          // ボタン無効
+          $("#shiftbtn").prop("disabled", true);
         }
       });
     });
 
     $(function() {
-      $('#jobtypebtn').attr('disabled', 'disabled');
-      $('[name="jobtype"]').click(function() {
-        if ($(this).prop('checked') == false) {
-          $('#jobtypebtn').attr('disabled', 'disabled');
+      // 初期状態のボタンは無効
+      $("#jobtypebtn").prop("disabled", true);
+      // チェックボックスの状態が変わったら（クリックされたら）
+      $("input[type='checkbox']").on('change', function() {
+        // チェックされているチェックボックスの数
+        if ($(".srh_jobtype_param:checked").length > 0) {
+          // ボタン有効
+          $("#jobtypebtn").prop("disabled", false);
         } else {
-          $('#jobtypebtn').removeAttr('disabled');
+          // ボタン無効
+          $("#jobtypebtn").prop("disabled", true);
         }
       });
     });
 
     $(function() {
-      $('#spanbtn').attr('disabled', 'disabled');
-      $('[name="span"]').click(function() {
-        if ($(this).prop('checked') == false) {
-          $('#spanbtn').attr('disabled', 'disabled');
+      // 初期状態のボタンは無効
+      $("#spanbtn").prop("disabled", true);
+      // チェックボックスの状態が変わったら（クリックされたら）
+      $("input[type='checkbox']").on('change', function() {
+        // チェックされているチェックボックスの数
+        if ($(".srh_span_param:checked").length > 0) {
+          // ボタン有効
+          $("#spanbtn").prop("disabled", false);
         } else {
-          $('#spanbtn').removeAttr('disabled');
+          // ボタン無効
+          $("#spanbtn").prop("disabled", true);
         }
       });
     });
